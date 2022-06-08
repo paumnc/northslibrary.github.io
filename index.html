@@ -16,19 +16,39 @@
                     <figure class="nav_logo">
                         <img class="nav_logo--img" src="./assets/north_logo.svg" alt="">
                     </figure>
-                <ul class="nav_links">
-                    <li class="nav_link--list"><a  class="nav_link" href="#home" target="_blank">Home</a></li>
-                    <li class="nav_link--list"><a class="nav_link" href="#contacts" target="_blank">Contacts</a></li>
-                    <li class="nav_link--list"><a class="nav_link nav_link--primary" href="#books" target="_blank">Books</a></li>
-                </ul>
-            </div>
+                   
+                    <ul class="nav_links">
+                        <li class="nav_link--list"><a  class="nav_link" href="#">Home</a></li>
+                        <li class="nav_link--list"><a class="nav_link" href="#">Contacts</a></li>
+                        <li class="nav_link--list"><a class="nav_link nav_link--primary" href="#recent">Books</a></li>
+                    </ul>
+                
+                     <!-- for smaller screen navigation using burger menu-->
+                
+                    <button class="btn_menu" onclick="openMenu()">
+                        <i class="btn_icon fa-solid fa-bars"></i>
+                    </button>
+                    <div class="menu_backdrop">
+                        <button class="btn_menu btn_menu--close" onclick="closeMenu()">
+                            <i class="fa-solid fa-x"></i>
+                        </button>
+                        <ul class="menu_links">
+                            <li class="menu_list"><a  class="menu_link" onclick="closeMenu()" href="#">Home</a></li>
+                            <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#">Contacts</a></li>
+                            <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#recent">Books</a></li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
         <header>
             <div class="header_container">
                 <div class="header_description">
                     <h1>Canada's most awarded online library platform</h1>
                     <h2 class="header_description--subtitle">Find your dream book with <span class="blue">Library</span></h2>
-                    <button class="btn_style">Browse Books</button>
+                    <a href="#features">
+                        <button class="btn_style">Browse Books</button>
+                    </a>
+                        
                 </div>
                 <figure class="header_img--wrapper">
                     <img src="./assets/undraw_reading_time_re_phf7.svg" alt="" class="header_description--img">
@@ -314,16 +334,33 @@
         </section>
         <section id="explore">
             <div class="container">
-                <div class="row">
+                <div class="row row_column">
                     <h2 class="explore_title">
                         Explore more <span class="explore_book blue">Books</span>
                     </h2>
-                    <button class="btn_style">Browse books</button>
+                    <a href="#features">
+                        <button class="btn_style">Browse books</button>
+                    </a>
                 </div>
             </div>
         </section>
         <footer>
-            
+            <div class="container">
+                <div class="row row_column">
+                    <a href="#">
+                        <figure class="footer_logo">
+                            <img src="./assets/north_logo--white.svg" class="footer_logo--img" alt="">
+                        </figure>
+                    </a>
+                    <div class="footer_list">
+                            <a href="#" class="footer_link">Home</a>
+                            <a href="#landing" class="footer_link no-cursor">About</a>
+                            <a href="#recent" class="footer_link">Books</a>
+                            <a href="#" class="footer_link no-cursor">Contacts</a>
+                    </div>
+                    <div class="footer_copyright">Copyright &copy; 2021</div>
+                </div>
+            </div>
         </footer>
 
     </main>
