@@ -364,6 +364,7 @@ FEATURES
     max-height: 380px;
     transition: all 300ms ease;
     cursor: not-allowed;
+    height: 340px;
 }
 
 .book_title {
