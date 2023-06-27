@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="booksstyle.css">
+  <script src="https://kit.fontawesome.com/b7d3a69eca.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+</head>
+
+<body id="books__body">
+  <section>
+    <nav>
+        <div class="nav_container">
+            <figure class="nav_logo">
+                <img class="nav_logo--img" src="./assets/north_logo.svg" alt="">
+            </figure>
+           
+            <ul class="nav_links">
+                <li class="nav_link--list"><a  class="nav_link" href="#">Home</a></li>
+                <li class="nav_link--list"><a class="nav_link" href="#">Contacts</a></li>
+                <li class="nav_link--list"><a class="nav_link nav_link--primary" href="#recent">Books</a></li>
+            </ul>
+        
+             <!-- for smaller screen navigation using burger menu-->
+        
+            <button class="btn_menu" onclick="openMenu()">
+                <i class="btn_icon fa-solid fa-bars"></i>
+            </button>
+            <div class="menu_backdrop">
+                <button class="btn_menu btn_menu--close" onclick="closeMenu()">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+                <ul class="menu_links">
+                    <li class="menu_list"><a  class="menu_link" onclick="closeMenu()" href="#">Home</a></li>
+                    <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#">Contacts</a></li>
+                    <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#recent">Books</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </section>
+
+  <main id="books__main">
+    <section>
+      <div class="container">
+        <div class="row">
+            <div class="books__header">
+                <h2 class="section__title books__header--title">
+                    All <span class="blue">Books</span>
+                </h2>
+                <select id="filter" onchange="filterBooks(event)">
+                    <option value="" disabled selected>Sort</option>
+                    <option value="LOW_TO_HIGH">Price, Low to High</option>
+                    <option value="HIGH_TO_LOW">Price, High to Low</option>
+                    <option value="RATING" >Ratings</option>
+                </select>
+            </div>
+                <div class="books"></div>
+        </div>
+      </div>
+    </section>
+    
+</main>
+  <footer>
+    <div class="container">
+        <div class="row row_column">
+            <a href="#">
+                <figure class="footer_logo">
+                    <img src="./assets/north_logo--white.svg" class="footer_logo--img" alt="">
+                </figure>
+            </a>
+            <div class="footer_list">
+                    <a href="#" class="footer_link">Home</a>
+                    <a href="#landing" class="footer_link no-cursor">About</a>
+                    <a href="#recent" class="footer_link">Books</a>
+                    <a href="#" class="footer_link no-cursor">Contacts</a>
+            </div>
+            <div class="footer_copyright">Copyright &copy; 2021</div>
+        </div>
+    </div>
+</footer>
+<script src="books.js"></script>
+</body>
+
+</html>
