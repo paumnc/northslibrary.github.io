@@ -27,17 +27,17 @@ function renderBooks(filter) {
     // "HIGH_TO_LOW" if the original price is high to low
     //"RATING" if the rating is from 5 stars down to 1 star and created a function that will increment the stars in the HTML see ratingsHTML() below
     if (filter === "LOW_TO_HIGH") {
-     books.sort((a, b) => a.originalPrice - b.originalPrice);
-    
+        books.sort((a, b) => a.originalPrice - b.originalPrice);
+
     }
-    else if (filter === 'HIGH_TO_LOW'){
+    else if (filter === 'HIGH_TO_LOW') {
         books.sort((a, b) => b.originalPrice - a.originalPrice);
     }
     else if (filter === 'RATING') {
         books.sort((a, b) => b.rating - a.rating);
     }
-    
-  
+
+
     // created a map() for the const books below then return it as a new array and added it inside the booksWrapper as a html code and created a new "BOOK" with the pictures, title, price etc
     // Then, target the url, title, prices to push it inside the array to create the new "BOOK" amd used the join() to combine all the array
     const booksHTML = books.map(book => {
@@ -52,7 +52,8 @@ function renderBooks(filter) {
                 ${ratingsHTML(book.rating)}
             </div>
             <div class="book__price">
-                <span class="book__price--normal">${book.originalPrice.toFixed(2)}</span> ${book.salePrice}
+            ${priceHTML(book.originalPrice, book.salePrice)}
+          
             </div>
         </div>`;
     }).join('');
@@ -61,24 +62,17 @@ function renderBooks(filter) {
     booksWrapper.innerHTML = booksHTML;
 }
 
+// toFixed(2) will return a decimal point example 2 = 1.00
+// created the 
+function priceHTML(originalPrice, salePrice) {
+    if (!salePrice){
+     return `$${originalPrice.toFixed(2)}`;
+    } 
+    return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span>
+     $${salePrice.toFixed(2)}`;
+}
 
-// // try to understand this soon
-// function ratingsHTML (rating) {
-//     let ratingHTML = '';
-// for (let i = 0; i < Math.floor(rating); i++) {
-// if(Number.isInteger(rating)){
- 
-//     ratingHTML += '<i class="fas fa-star"></i>\n'
-//     // incremeting all of the stars to full stars
-// } else
-// ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
 
-// // incrementing all of the stars to half stars if there's a decimal point
-// }
-// console.log(rating);
-// console.log(ratingHTML);
-// return ratingHTML;
-// }
 
 // created ratingsHTML() that returns rating then create a variable ratingHTML for the for loop and used Math.floor() to round off the rating into a whole number
 /*It iterates the rating and the function was used in  
@@ -87,26 +81,27 @@ function renderBooks(filter) {
 </div> 
 to use the rating from getBooks() which was used at the top in renderBooks()
 */
-function ratingsHTML (rating) {
+
+function ratingsHTML(rating) {
     let ratingHTML = '';
- 
-for (let i = 0; i < Math.floor(rating); i++) {
-ratingHTML += '<i class="fas fa-star"></i>\n'
-} 
-if(!Number.isInteger(rating)){
-ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
-}
-return ratingHTML;
+
+    for (let i = 0; i < Math.floor(rating); i++) {
+        ratingHTML += '<i class="fas fa-star"></i>\n'
+    }
+    if (!Number.isInteger(rating)) {
+        ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
+    }
+    return ratingHTML;
 }
 
 
 
 function filterBooks(event) {
-renderBooks(event.target.value);
-// if we console.log(event) we can see the other js method to use & the value which indicates the options we put in such as LOW_TO_HIGH, HIGH_TO_LOW & RATING
-//check to target the options in sorting the books
-// if (event.target.value === 'LOW_TO_HIGH') {
-//     console.log('low to high')
+    renderBooks(event.target.value);
+    // if we console.log(event) we can see the other js method to use & the value which indicates the options we put in such as LOW_TO_HIGH, HIGH_TO_LOW & RATING
+    //check to target the options in sorting the books
+    // if (event.target.value === 'LOW_TO_HIGH') {
+    //     console.log('low to high')
 
 }
 
