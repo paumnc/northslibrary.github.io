@@ -367,7 +367,7 @@ FEATURES
     max-height: 380px;
     transition: all 300ms ease;
     cursor: not-allowed;
-    height: 380px;
+    /* height: 380px; */
     object-fit: contain;
     object-position: center;
 }

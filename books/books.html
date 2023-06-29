@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library</title>
+  <title>Books</title>
   <link rel="stylesheet" href="booksstyle.css">
   <script src="https://kit.fontawesome.com/b7d3a69eca.js" crossorigin="anonymous"></script>
   <script src="index.js"></script>
@@ -20,9 +20,9 @@
             </figure>
            
             <ul class="nav_links">
-                <li class="nav_link--list"><a  class="nav_link" href="#">Home</a></li>
+                <li class="nav_link--list"><a  class="nav_link" href="../index.html">Home</a></li>
                 <li class="nav_link--list"><a class="nav_link" href="#">Contacts</a></li>
-                <li class="nav_link--list"><a class="nav_link nav_link--primary" href="#recent">Books</a></li>
+                <li class="nav_link--list"><a class="nav_link nav_link--primary" href="#books__main">Books</a></li>
             </ul>
         
              <!-- for smaller screen navigation using burger menu-->
@@ -35,9 +35,9 @@
                     <i class="fa-solid fa-x"></i>
                 </button>
                 <ul class="menu_links">
-                    <li class="menu_list"><a  class="menu_link" onclick="closeMenu()" href="#">Home</a></li>
+                    <li class="menu_list"><a  class="menu_link" onclick="closeMenu()" href="../index.html">Home</a></li>
                     <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#">Contacts</a></li>
-                    <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#recent">Books</a></li>
+                    <li class="menu_list"><a class="menu_link" onclick="closeMenu()" href="#books__main">Books</a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +59,9 @@
                     <option value="RATING" >Ratings</option>
                 </select>
             </div>
-                <div class="books"></div>
+                <div class="books .books__loading">
+                    <i class="fa-solid fa-circle-notch books__loading--spinner"></i>
+                </div>
         </div>
       </div>
     </section>
